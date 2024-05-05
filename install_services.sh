@@ -127,6 +127,3 @@ sudo systemctl start deluged deluge-web
 
 # Return to home directory
 cd ~
-
-# Setup cron job to run this script hourly
-(crontab -l 2>/dev/null; echo "0 * * * * /home/$USER/maintain_services.sh >> /home/$USER/service_maintenance.log 2>&1") | crontab -

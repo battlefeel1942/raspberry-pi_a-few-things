@@ -17,6 +17,10 @@ echo "Creating user $newuser..."
 useradd -m -s /bin/bash $newuser
 echo $newuser:$newpass | chpasswd
 
+# Add user to sudo group
+echo "Adding $newuser to sudo group..."
+usermod -aG sudo $newuser
+
 # Update and upgrade the system
 echo "Updating and upgrading your system. This may take a while..."
 sudo apt-get update && sudo apt-get upgrade -y
